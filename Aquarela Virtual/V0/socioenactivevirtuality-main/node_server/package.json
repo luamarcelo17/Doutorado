@@ -1,0 +1,18 @@
+{
+  "name": "aquarela_io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client_client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "*",
+    "socket.io": "^1.7.4",
+    "socket.io-client": "^4.0.1"
+  }
+}

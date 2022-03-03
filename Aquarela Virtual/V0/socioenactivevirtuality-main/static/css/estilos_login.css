@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background:
+  	url("/static/images/login/doodles-left.png") no-repeat left 0,
+  	url("/static/images/login/doodles-right.png") no-repeat right 0,
+  	url("/static/images/login/grid.png");
+}
+
+#folha-papel {
+	margin-left: -2%;
+	min-width: 70vw;
+	min-height: 91vh;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	position: relative;
+}
+
+#folha-papel:before, #folha-papel:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 98%;
+  z-index: -100;
+}
+
+#folha-papel:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+
+#folha-papel:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}
+
+.conteudo_login {
+	padding: 1em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-family: 'Pacifico', cursive;
+	color: #333;
+	padding: 35px 0 15px 0;
+	margin: 0;
+	text-align: center;
+}
+
+h1 #letra-1, #letra-2, #letra-3, #letra-4, #letra-5, #letra-6, #letra-7, #letra-8 {
+	font-family: 'Pacifico', cursive;
+	font-size: 2em;
+}
+
+h1 #letra-1 { color: #c27ba0; }
+h1 #letra-2 { color: #674ea7; }
+h1 #letra-3 { color: #6d9eeb; }
+h1 #letra-4 { color: #76a5af; }
+h1 #letra-5 { color: #93c47d; }
+h1 #letra-6 { color: #f1c232; }
+h1 #letra-7 { color: #f6b26b; }
+h1 #letra-8 { color: #cc0000; }
+
+h1 #palavra-virtual {
+	font-family: 'VT323', monospace;
+	color: #444;
+	font-size: 2em;
+}
+
+#frm_login_participante {
+	padding: 3em;
+}
+
+#nome {
+	margin-top: 1%;
+  font-size: 2em;
+  border-radius: 0.3em;
+  padding: 0.3em;
+  border: solid 2px #4285f4;
+  box-shadow: 0 0 8px gray;
+  margin-bottom: 2.5%;
+}
+
+#labelNome {
+	display: block;
+	font-size: 1.5em;
+	color: #4285f4;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#labelAvatar {
+	display: block;
+	font-size: 20px;
+	margin-bottom: 1%;
+	font-family: 'Quicksand', sans-serif;
+} 
+
+#bntFazerLogin {
+	margin-top: 2.5%;
+	background-color: #34a853ff;
+	cursor: pointer;
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 1em;
+	width: 8vw;
+  height: 12vh;
+	align-content: center;
+	text-align: center;
+}
+
+#bntFazerLogin img {
+	width: 100%;
+}
+
+#bntFazerLogin::after {
+	content: "Vamos criar juntos?!";
+	font-family: 'Caveat Brush';
+  color: #4285f4;
+  font-size: 34px;
+  transform: rotate(352deg);
+	display: inline-block;
+	width: 300px;
+	height: 130px;
+	position: relative;
+	left: 8vw;
+	top: -10vh;
+	background: url("/static/images/login/arrow.png") no-repeat left 4vh;
+}
+
+
+input[type=text]:focus { 
+	outline: 0 transparent;
+}
+
+input[type=text].touched:invalid { 
+	background-color: rgba(255, 255, 204, 1);
+}
+
+#labelAvatar {
+	font-size: 1.5em;
+	color: #4285f4;
+}
+
+#labelAvatar.invalid::after {
+	content: "\aVocê precisa escolher um... eles são tão legais!";
+	white-space: pre;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	border-bottom: 5px solid yellow;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+  width: 9%;
+  /*height: 9%;*/
+  padding: 1%;
+  border: 4px solid transparent;
+  margin-top: -4px;
+
+}
+
+[type=radio]:checked + img,
+[type=radio]:checked:hover + img {
+  border: 4px solid #6d9eeb;
+  border-radius: 20%;
+  background-color: #6d9eeb;
+}
+
+[type=radio]:hover + img {
+  border: 4px solid #EEEEEE;
+  border-radius: 20%;
+  background-color: #EEEEEE;
+}

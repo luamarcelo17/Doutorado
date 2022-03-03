@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/normalize-8.0.1.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/animate-4.1.1.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/fontawesome.all.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_' ~ pagina ~ '.css') }}">
+        <style>
+            .tooltip {
+                font: 1.2rem sans-serif;
+                background-color: #333333;
+                color: #EEEEEE;
+                padding: 0.5em;
+                border-radius: 0.5em;
+            }
+        </style>
+        <title>{{ titulo_pagina }}</title>
+    </head>
+
+    <body>
+        {% block conteudo_dinamico %}
+        {% endblock %}
+    </body>
+
+    <script src="{{ url_for('static', filename='js/lib/socket.io-4.2.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/webcam-1.0.25.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/qrcode-decoder-0.2.2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/anime-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/itooltip-1.1.1.js') }}"></script>
+    <script>
+        var tooltip = new iTooltip();
+        tooltip.init();
+    </script>
+    <script src="{{ url_for('static', filename='js/script_' ~ pagina ~ '.js') }}"></script>
+</html>

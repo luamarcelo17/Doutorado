@@ -1,0 +1,127 @@
+{% extends "template_modulo_admin.html" %}
+{% block conteudo_dinamico %}
+<aside>
+    <div class="cabecalho">
+        <div id="logo-oficina">
+            <h1 style="padding-left: 15px; font-size: 1.5em;" id="logo"> 
+                <strong>
+                        <span id="letra-1">A</span>
+                        <span id="letra-2">q</span>
+                        <span id="letra-3">u</span>
+                        <span id="letra-4">a</span>
+                        <span id="letra-5">r</span>
+                        <span id="letra-6">e</span>
+                        <span id="letra-7">l</span>
+                        <span id="letra-8">a</span>
+                        <span id="palavra-virtual">Virtual</span>
+                        <span id="painel-adm"> - Painel de Administração</span>
+                </strong>
+            </h1>
+            <sapn id="lastAction"></sapn>
+        </div>
+
+        <div id="oficina">
+            <div>
+                <h3> <i class="fa fa-desktop" aria-hidden="true"></i><strong>  Oficina: </strong></h3>
+            </div>
+            <div>
+                <h3 id="nome-oficina"></h3>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+<main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="acao-modal">?</p>
+          <button class="btnModal" id="btnModalCancel">Cancelar</button>
+          <button class="btnModal" id="btnModalConfirm">Confirmar</button>
+        </div>    
+    </div>
+
+    <div class="main-painel">
+        <div class="menu-lateral">
+            <div id="controle">
+                <p id="secao-menu-lateral"> <i class="fa fa-cogs" aria-hidden="true"></i> <strong>Controle Oficina</strong></p>
+                <button type="button" class="btnControle" id="btnTerminar" onclick="modalAcao({evento: this.value, acao: this.id})" name="btnTO" value="ENCERRAR A OFICINA">Encerrar Oficina</button>
+                <button type="button" class="btnControle" id="btnEstrofe" onclick="modalAcao({evento: this.value, acao: this.id})" name="btnEE" value="TERMINAR A ESTROFE">Terminar Estrofe</button>
+                <div id='excluir-fotos'>
+                    <div id="selecao-fotos">
+                        <div>
+                            <h4> <strong>Fotos selecionadas:</strong></h4>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 0.5em;" id="fotos-selecionadas">0</h4>
+                        </div>
+                    </div>
+                    <button style ="width: 92%;" class="btnControle" id="btnExcluirSelecao" onclick="modalAcao({evento: this.value, acao: this.id})" type="button" value="EXCLUIR A(s) FOTO(s)" alt="Excluir Seleção"> Excluir Fotos </button> 
+                    <div id="fotos-excluidas">
+                        <div>
+                            <h4> <strong>Fotos excluídas:</strong></h4>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 0.5em;" id="fotos-movidas">0</h4>
+                        </div>
+                    </div>
+                </div> 
+                <div id='renomear-oficina'>
+                    <input style="margin-top: 1em;" type="text" required value="" id="novo-nome-oficina" name="novo_nome" placeholder="">
+                    <button style ="width: 92%; margin-top: 1em;" type="button" class="btnControle" id="btnRenomearOficina" onclick="modalAcao({evento: document.getElementById('novo-nome-oficina').value, acao: this.id})" name="btnTO" >Renomear Oficina</button>
+                </div>   
+                <div id='gerar-zip'>
+                    <button style ="width: 92%; margin-top: 1em;" type="button" class="btnControle" id="btnGerarZip" onclick="gerarZip()" name="btnZip" >Gerar Dados</button>
+                    <br><span id="link-download"></span>
+                </div> 
+            </div>
+
+            <hr>
+
+            <div class="participantes-online" id="participante-online">
+                <p id="secao-menu-lateral"> <i class="fa fa-users" aria-hidden="true"></i> <strong>Participantes Online</strong><p>         
+            </div>
+        </div>
+
+        <div class="gerenciamento-fotos">
+            <div id="painel-fotos">
+                    <h2>  <i class="far fa-images"></i>  Gerenciamento Fotos</h2>
+                    <div id="infos-fotos">
+                        <div>
+                            <h4> <strong>Quantidade fotos:</strong></h4>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 0.5em;" id="qtde-fotos"></h4>
+                        </div>
+                        <div style="margin-left: 2em;">
+                            <h4> <strong>Tempo estimado por foto:</strong></h4>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 0.5em;" id="tempo-fotos"></h4>
+                        </div> 
+                    </div>     
+            </div>
+
+            <div id="fotos" name="fotos">
+                <ul id="lista-fotos">
+                    {% for item in lista_fotos|reverse: %}
+                    {% if lista_fotos|length == 0 %}
+                        <h2>Não há fotos disponíveis para avaliar.</h2>
+                    {% else %}
+                    <li id="id{{item['caminho']}}">
+                        <input onchange="verficarMudanca(this)" type="checkbox" id="{{item['caminho']}}" />
+                        <label class="label_foto" for="{{item['caminho']}}">
+                            <img src="{{url_for('static',filename=item['caminho'])}}" />
+                            <div>
+                                {{item['descricao']}}
+                            </div>
+                        </label>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

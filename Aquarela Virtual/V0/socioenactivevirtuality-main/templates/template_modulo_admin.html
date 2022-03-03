@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/fontawesome.all.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_validar_fotos.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_login_admin.css') }}">
+        <title>{{ titulo_pagina }}</title>
+    </head>
+    
+    <body>
+        
+            {% block conteudo_dinamico %}
+            {% endblock %}
+    </body>
+
+     <script src="{{ url_for('static', filename='js/lib/socket.io-4.2.0.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/script_admin.js') }}"></script>
+
+</html>

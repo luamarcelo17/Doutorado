@@ -1,0 +1,97 @@
+{% set pagina = 'login' %}
+{% extends "template_master.html" %}
+{% block conteudo_dinamico %}
+
+<div class="conteudo_login">
+	<section id="folha-papel">
+		<h1><span id="letra-1">A</span><span id="letra-2">q</span><span id="letra-3">u</span><span id="letra-4">a</span><span id="letra-5">r</span><span id="letra-6">e</span><span id="letra-7">l</span><span id="letra-8">a</span> <span id="palavra-virtual">Virtual</span></h1>
+
+    <form id="frm_login_participante" name="frm_login_participante" action="{{url_for('quadro_desenho')}}" method="POST">
+        <label for="nome" id="labelNome"><strong>Nome</strong></label>
+        <input name="nome" id="nome" type="text" value="{{ nome_participante }}" maxlength="20" minlength="3" placeholder="" autofocus required/>
+
+        <label for="avatar" id="labelAvatar"><strong>Avatar</strong></label>
+        <label>
+			<input type="radio" id="hipopotamo" name="avatar" value="hipopotamo" required />
+			<img src="{{url_for('static',filename='images/avatar/hipoppotamus_emoji.png')}}" alt="hipopotamo" title="hipopotamo" aria-label="hipopotamo">
+		</label>
+		<label>
+			<input type="radio" id="gato" name="avatar" value="gato" required />
+			<img src="{{url_for('static',filename='images/avatar/cat_emoji.png')}}" alt="gato" title="gato" />
+		</label>
+		<label>
+			<input type="radio" id="panda" name="avatar" value="panda" required />
+			<img src="{{url_for('static',filename='images/avatar/panda_emoji.png')}}" alt="panda" title="panda" />
+		</label>
+		<label>
+			<input type="radio" id="guaxinim" name="avatar" value="guaxinim" required />
+			<img src="{{url_for('static',filename='images/avatar/raccoon_emoji.png')}}" alt="guaxinim" title="guaxinim" required />
+		</label>
+		<label>
+			<input type="radio" id="macaco" name="avatar" value="macaco" required />
+			<img src="{{url_for('static',filename='images/avatar/monkey_emoji.png')}}" alt="macaco" title="macaco" />
+		</label>
+		<label>
+			<input type="radio" id="tigre" name="avatar" value="tigre" required />
+			<img src="{{url_for('static',filename='images/avatar/tiger_emoji.png')}}" alt="tigre" title="tigre" />
+		</label>
+		<label>
+			<input type="radio" id="coala" name="avatar" value="coala" required />
+			<img src="{{url_for('static',filename='images/avatar/koala_emoji.png')}}" alt="coala" title="coala" />
+		</label>
+		<label>
+			<input type="radio" id="gorila" name="avatar" value="gorila" required />
+			<img src="{{url_for('static',filename='images/avatar/gorilla_emoji.png')}}" alt="gorila" title="gorila" />
+		</label>
+		<br>
+		<label>
+			<input type="radio" id="coelho" name="avatar" value="coelho" required />
+			<img src="{{url_for('static',filename='images/avatar/rabbit_emoji.png')}}" alt="coelho" title="coelho" />
+		</label>
+		<label>
+			<input type="radio" id="raposa" name="avatar" value="raposa" required />
+			<img src="{{url_for('static',filename='images/avatar/fox_emoji.png')}}" alt="raposa" title="raposa" />
+		</label>
+		<label>
+			<input type="radio" id="vaca" name="avatar" value="vaca" required />
+			<img src="{{url_for('static',filename='images/avatar/cow_emoji.png')}}" alt="vaca" title="vaca" />
+		</label>
+		<label>
+			<input type="radio" id="urso" name="avatar" value="urso" required />
+			<img src="{{url_for('static',filename='images/avatar/bear_emoji.png')}}" alt="urso" title="urso" />
+		</label>
+		<label>
+			<input type="radio" id="cachorro" name="avatar" value="cachorro" required />
+			<img src="{{url_for('static',filename='images/avatar/dog_emoji.png')}}" alt="cachorro" title="cachorro" />
+		</label>
+		<label>
+			<input type="radio" id="porco" name="avatar" value="porco" required />
+			<img src="{{url_for('static',filename='images/avatar/pig_emoji.png')}}" alt="porco" title="porco" />
+		</label>
+		<label>
+			<input type="radio" id="leao" name="avatar" value="leao" required />
+			<img src="{{url_for('static',filename='images/avatar/lion_emoji.png')}}" alt="leão" title="leão" />
+		</label>
+		<label>
+			<input type="radio" id="lobo" name="avatar" value="lobo" required />
+			<img src="{{url_for('static',filename='images/avatar/wolf_emoji.png')}}" alt="lobo" title="lobo" />
+		</label>
+		<br>
+
+		<button id="bntFazerLogin" type="submit" alt="Participar da Aquarela"> <i class="fas fa-door fa-1x"></i> <img src="{{url_for('static',filename='images/login/airplane.png')}}" required /> </button>
+    </form>
+	</section>
+
+	
+	<script type="text/javascript">
+			function check_avatar(){
+				if ('{{avatar}}' != ''){
+					document.getElementById('{{avatar}}').checked = true;
+					document.getElementById("nome").focus();
+				}
+			}
+			check_avatar();
+
+	</script>
+</div>
+{% endblock %}

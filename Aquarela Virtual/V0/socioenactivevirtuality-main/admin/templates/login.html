@@ -1,0 +1,11 @@
+{% extends "template_modulo_admin.html" %}
+{% block conteudo_dinamico %}
+	<div class="conteudo_login">
+		<h1 style="margin-top: -222px" id="logo"><strong><span id="letra-1">A</span><span id="letra-2">q</span><span id="letra-3">u</span><span id="letra-4">a</span><span id="letra-5">r</span><span id="letra-6">e</span><span id="letra-7">l</span><span id="letra-8">a</span> <span id="palavra-virtual">Virtual</span></strong></h1>
+        <h1 id="titulo">Painel de Adiminstração</h1>
+        <form id="login" name="login" method="POST" action="{{ url_for('admin.validar_foto') }}">
+            <input name="senha" id="senha" type="password" maxlength="30" placeholder="Digite sua senha"/>
+            <button id="bntFazerLogin" type="submit" alt="Login"> <i class="fas fa-key fa-1x"></i> <strong>Login</strong> </button>
+    	</form>
+    </div>
+{% endblock %}

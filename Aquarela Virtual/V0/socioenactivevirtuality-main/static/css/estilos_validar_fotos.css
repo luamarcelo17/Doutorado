@@ -1,0 +1,301 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.conteudo {
+	align-content: center;
+	padding: 2%;
+	font-family: sans-serif;
+}
+
+#fotoUsuario{
+	border-radius: 10px;
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline-block;
+}
+
+input[type="checkbox"][id^="photos/"] {
+	display: none;
+}
+
+label {
+	border: 1px solid #fff;
+	/*padding: 1px;*/
+	display: block;
+	position: relative;
+	margin: 5px;
+	cursor: pointer;
+	user-select: none;
+}
+
+label::before {
+	background-color: white;
+	color: white;
+	content: " ";
+	display: block;
+	border-radius: 50%;
+	border: 1px solid grey;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 28px;
+	transition-duration: 0.4s;
+	transform: scale(0);
+}
+
+label img {
+	height: 230px;
+	width: 400px;
+	transition-duration: 0.2s;
+	transform-origin: 50% 50%;
+	border-radius: 8px;
+	/* padding: 0.5em; */
+}
+
+.label_foto{
+	text-align: center;
+	padding: 0.5em;
+}
+
+:checked+label {
+	border-color: green;
+	border-radius: 8px;
+	padding: 0.5em;
+}
+
+:checked+label::before {
+	content: "✓";
+	background-color: green;
+	transform: scale(1);
+}
+
+:checked+label img {
+	transform: scale(0.9);
+	box-shadow: 0 0 5px #333;
+	z-index: -1;
+}
+#bntAtualizarFotos {
+	margin-top: 2%; 
+	margin-left: 3%;
+	background-color: #34a853ff;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	border: 1px solid #34a853ff;
+    display: inline-block;
+    padding: 10px 16px;
+    vertical-align: middle;
+    border-radius: 8px;
+}
+
+#linkVoltar {
+	margin-top: 2%; 
+	margin-left: 3%;
+}
+
+/* aside{
+	float: leaft;
+} */
+
+.main-painel {
+    display: flex;
+}
+
+.cabecalho {
+	border-bottom: solid 1px gray;
+	display: inline-flex;
+	width: 100%;
+}
+
+#logo-oficina {
+	width: 60%;
+}
+#oficina {
+	width: 40%;
+	font-size: 2em;
+	padding-top: 0.5em;
+	padding-right: 1em;
+	display: inline-flex;
+}
+
+#nome-oficina {
+	margin-left: 0.5em;
+}
+
+.menu-lateral {
+	width: 15%;
+	box-shadow: 5px 0px 3px -2px #333;
+	padding: 1em;
+	display: inline;
+	text-align: center;
+}
+
+.gerenciamento-fotos {
+	width: 85%;
+	align-items: center;
+	margin-left: 1em;
+	padding: 1em;
+	display: inline;
+}
+
+#fotos {
+	text-align: center;
+	padding-top: 1.5em;
+}
+
+#secao-menu-lateral {
+	font-size: 18px;
+	margin-top: 1.1em;
+}
+
+#painel-fotos {
+	display: flex;
+}
+
+#infos-fotos {
+	display: inline-flex;
+	text-align: center;
+	margin-left: 2em;
+	padding-top: 1.25em;
+	border-radius: 8px;
+}
+
+#excluir-fotos {
+	margin-top: 1em;
+	border:solid 1px black;
+	border-radius: 12px;
+	background-color: honeydew;
+	margin-bottom: 1em;
+}
+
+#selecao-fotos {
+	display: flex;
+	justify-content: center;
+}
+
+#fotos-excluidas {
+	display: flex;
+    justify-content: center;
+}
+
+#renomear-oficina {
+	margin-top: 1em;
+	border:solid 1px black;
+	border-radius: 12px;
+	background-color: honeydew;
+	margin-bottom: 1em;
+}
+
+.btnParticipante {
+	background-color: #81acf2;
+	margin-left: 2%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+	text-align: center;
+	font-size: 1.3em;
+	box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px;
+	width: 100%;
+	padding: 3px 16px;
+
+}
+
+.btnControle {
+	margin-left: 2%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	background-color: #34a853ff;
+	color: white;
+	cursor: pointer;
+	font-size: 1.3em;
+	border: none;
+    display: inline-block;
+    padding: 3px 16px;
+    vertical-align: middle;
+    border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px;
+	width: 100%;
+}
+
+.modal {
+	display: none; 
+	position: fixed;
+	z-index: 1; 
+	padding-top: 100px; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%;
+    text-align: center;
+	font-size: 1.5em;
+  }
+
+  .btnModal {
+	margin-left: 2%;
+	background-color: #34a853ff;
+	cursor: pointer;
+	font-size: 18px;
+	border: none;
+    display: inline-block;
+    padding: 10px 16px;
+    vertical-align: middle;
+    border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px;
+	color: white;
+}
+
+
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+  .btnDownload {
+	background-color: #34a853ff;
+	border: none;
+	color: white;
+	padding: 3px 16px;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 8px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btnDownload:hover {
+	color: black;
+	background-color: rgb(236, 169, 157);
+  }

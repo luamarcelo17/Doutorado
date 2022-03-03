@@ -1,0 +1,139 @@
+{% set pagina = 'desenho' %}
+{% extends "template_master.html" %}
+{% block conteudo_dinamico %}
+<header class="animate__animated animate__fadeInUp">
+    <h1 ><span id="letra-1">A</span><span id="letra-2">q</span><span id="letra-3">u</span><span id="letra-4">a</span><span id="letra-5">r</span><span id="letra-6">e</span><span id="letra-7">l</span><span id="letra-8">a</span> <span id="palavra-virtual">Virtual</span></h1>
+
+    <div id="perfil-participante">
+        <p>
+          <img src="{{ url_avatar }}" alt="tigre" /> {{ nome_participante }} <a class="editar" title="Mudar nome e figura" href="{{url_for('index')}}"><i class="far fa-edit"></i></a>
+        </p>
+    </div>
+</header>
+<main>
+    <div class="animate__animated animate__rotateInUpLeft">
+    <section id="folha-papel">
+        <!--elementos_estrofe_1-->
+        <div id="estrofe1" class="estrofe escondido">
+          <div id="sol">
+            <img src="{{url_for('static',filename='images/designs/sol.svg')}}" id="sol-img" alt="sol-img" >
+          </div>
+          <div id="castelo">
+            <img src="{{url_for('static',filename='images/designs/castelo.svg')}}" id="castelo-img" alt="castelo-img" >
+          </div>
+          <div id="campo">
+            <img src="{{url_for('static',filename='images/designs/campo.svg')}}" id="campo-img" alt="campo-img" >
+          </div>
+          <div id="estrofe1-avatares"></div>
+        </div>
+        <!--elementos_estrofe_2-->
+        <div id="estrofe2" class="estrofe escondido">
+          <div id="mundo" class="mundo" >
+            <img src="{{url_for('static',filename='images/designs/mundo.svg')}}" id="mundo-img" alt="mundo-img" >
+          </div>
+          <div id="pingo-tinta" class="pingo-tinta" >
+            <img src="{{url_for('static',filename='images/designs/pingo.svg')}}" id="pingo-tinta-img" alt="pingo-tinta-img" >
+          </div>
+          <div id="splash-tinta" class="escondido" >
+            <img src="{{url_for('static',filename='images/designs/splash.png')}}" id="splash-img" alt="splash-img" >
+          </div>
+          <div id="container-gaivota">
+            <svg viewBox="0 0 800 800">
+              <path id="caminho-gaivota" fill="transparent" stroke="#888888" stroke-width="0" d="M 0 250 Q 100 150 200 200 Q 300 250 400 250 Q 500 250 600 200 Q 700 150 800 250 "></path>
+            </svg>
+            <div id="gaivota">
+              <img src="{{url_for('static',filename='images/designs/gaivota1.svg')}}" id="gaivota-img" alt="gaivota-img" >
+            </div>
+          </div>
+          <div id="estrofe2-avatares"></div>
+        </div>
+        <!--elementos_estrofe_3-->
+        <div id="estrofe3" class="estrofe escondido">
+            <div class="oceano">
+                  <div class="mySlides ondas-mar fade">
+                    <img src="{{url_for('static',filename='images/designs/oceano1.svg')}}" style="width:100%">
+                  </div>
+                  <div class="mySlides ondas-mar fade">
+                    <img src="{{url_for('static',filename='images/designs/oceano2.svg')}}" style="width:100%">
+                  </div>
+                  <div class="mySlides ondas-mar fade">
+                    <img src="{{url_for('static',filename='images/designs/oceano3.svg')}}" style="width:100%">
+                  </div>
+            </div>
+            <div style="text-align:center">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div id="estrofe3-avatares"></div>
+            <div id="estrofe3-background-avatares"></div>
+            <div id="barco-a-vela" class="barco-a-vela">
+              <img src="{{url_for('static',filename='images/designs/barco.svg')}}" id="barco-a-vela-img" alt="barco-a-vela-img" >
+            </div>
+        </div>
+        <!--elementos_estrofe_4-->
+        <div id="estrofe4" class="estrofe escondido">
+          <div id="nuvem1">
+            <img src="{{url_for('static',filename='images/designs/nuvem1.svg')}}" style="width:100%">
+          </div>
+          <div id="nuvem2">
+            <img src="{{url_for('static',filename='images/designs/nuvem2.svg')}}" style="width:100%">
+          </div>
+          <div id="nuvem3">
+            <img src="{{url_for('static',filename='images/designs/nuvem1.svg')}}" style="width:100%">
+          </div>
+          <div id="nuvem4">
+            <img src="{{url_for('static',filename='images/designs/nuvem2.svg')}}" style="width:100%">
+          </div>
+
+          <div id=estrela1> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela2> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela3> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela4> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela5> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela6> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+          <div id=estrela7> <img src="{{url_for('static',filename='images/designs/star.png')}}" style="width:100%"> </div>
+
+          <div id="aviao" class="aviao">
+            <img src="{{url_for('static',filename='images/designs/aviao.svg')}}" id="aviao-img" alt="aviao-img" >
+          </div>
+          <div id="nuvem5">
+            <img src="{{url_for('static',filename='images/designs/nuvem2.svg')}}" style="width:100%">
+          </div>
+
+          <div id="estrofe4-avatares"></div>
+        </div>
+        <!--elementos_grand_finale-->
+        <div id="grand_finale" class="estrofe escondido">
+          <div id="grand_finale_avatares"></div>
+          <div id="grand_finale_stickers">
+            <img src="{{url_for('static',filename='images/designs/mundo_sticker.svg')}}" id="mundo_sticker" 
+              style="width: 155px; position: absolute; left: 5%; bottom: 230%; z-index: 10;">
+            <img src="{{url_for('static',filename='images/designs/aviao_sticker.svg')}}" id="aviao_sticker"
+              style="width: 270px; position: absolute; left:6%; bottom:89%; z-index: 10;">
+            <img src="{{url_for('static',filename='images/designs/gaivota_sticker.svg')}}" id="gaivota_sticker"
+              style="width:140px; left:80%; position: absolute; bottom:180%; transform:rotate(341deg); z-index:10;">
+            <img src="{{url_for('static',filename='images/designs/castelo_sticker.svg')}}" id="castelo_sticker"
+            style="width:240px; position:relative; left:79%; bottom:50px; transform: rotate(348deg); z-index: 10;">
+          </div>
+        </div>
+
+    </section>
+    </div>
+
+    <aside class="animate__animated animate__fadeInRight">
+        <h2>Criando junto</h2>
+        <ul id="lista_participantes"></ul>
+
+        <div id="camera">
+            <button id="tirar-foto" type="button" alt="Tirar foto" class="escondido"> <i class="fas fa-camera fa-1x"></i> <strong>Tirar foto</strong> </button>
+            <span class="fa-stack fa-4x escondido" id="erro-webcam">
+                  <p>Erro ao inicializar a câmera.</p>
+                  <i class="fas fa-camera fa-stack-1x"></i>
+                  <i class="fas fa-ban fa-stack-2x"></i>
+            </span>
+            <div id="minha-camera"></div>
+        </div>
+    </aside>
+</main>
+{% endblock %}

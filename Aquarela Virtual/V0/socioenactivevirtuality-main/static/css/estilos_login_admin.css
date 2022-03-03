@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.conteudo_login {
+	padding: 1em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	position: absolute;
+	font-family: sans-serif;
+}
+
+#titulo {
+	padding-top: 80px;
+	padding-bottom: 10px;
+}
+
+h1 #logo {
+	font-family: 'Pacifico', cursive;
+	color: #333;
+	padding: 35px 0 15px 0;
+	margin: 0;
+	text-align: center;
+	position: relative;
+}
+
+h1 #letra-1, #letra-2, #letra-3, #letra-4, #letra-5, #letra-6, #letra-7, #letra-8 {
+	font-family: 'Pacifico', cursive;
+	font-size: 2em;
+}
+
+h1 #letra-1 { color: #c27ba0; }
+h1 #letra-2 { color: #674ea7; }
+h1 #letra-3 { color: #6d9eeb; }
+h1 #letra-4 { color: #76a5af; }
+h1 #letra-5 { color: #93c47d; }
+h1 #letra-6 { color: #f1c232; }
+h1 #letra-7 { color: #f6b26b; }
+h1 #letra-8 { color: #cc0000; }
+
+h1 #palavra-virtual {
+	font-family: 'VT323', monospace;
+	color: #444;
+	font-size: 2em;
+}
+
+#login {
+    align-items: center;
+}
+
+#senha {
+	font-size: 20px;
+	border-radius: 0.3em;
+	padding: 0.3em;
+}
+
+#bntFazerLogin {
+	margin-bottom: 1%;
+	background-color: #34a853ff;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	border: 1px solid #34a853ff;
+    display: inline-block;
+    padding: 10px 16px;
+    vertical-align: middle;
+    border-radius: 8px;
+}
