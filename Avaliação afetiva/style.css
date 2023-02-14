@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: conter;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    font-size: 5em;
+    font-weight: 600;
+    padding-top: 25px;
+    margin-bottom: 50px;
+    background-color: aqua;
+}
+section {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.emojis {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.emojis img {
+    width: 200px;
+    cursor: pointer;
+}
+
+.emojis img:hover {
+    box-shadow: 0px 10px 20px #000000;
+    border-radius: 50%;
+}
+
+#emoji-sonolento:hover {
+    border-top-right-radius: 0;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-confirmar {
+    font-size: 50px;
+    border-radius: 25px;
+    background: rgb(211, 209, 209);
+    padding: 10px;
+    width: 400px;
+    cursor: pointer;
+    box-shadow: 2px 10px 20px #000000;
+    border:none;
+}
+
+.btn-confirmar:hover {
+    background: red;
+}
+
+.btn-emoji {
+    background: #fff;
+    border: none
+}
+
+footer {
+    font-size: 10px;
+    text-align: center;
+    background: gray;
+    margin-top: 50px;
+}
