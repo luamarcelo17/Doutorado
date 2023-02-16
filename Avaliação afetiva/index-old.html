@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="public/style.css" />
+
+    <title>Avaliação Afetiva</title>
+  </head>
+  <body>
+    <header>Como <span>você</span> está se sentindo?</header>
+    <section class="main">
+      <div class="emojis">
+        <button class="btn-emoji" value="feliz">
+          <img src="img/emojis/feliz.svg" alt="feliz" id="emoji-feliz" />
+        </button>
+        <button class="btn-emoji" value="calmo">
+          <img src="img/emojis/calmo.svg" alt="calmo" id="emoji-calmo" />
+        </button>
+        <button class="btn-emoji" value="triste">
+          <img src="imgemojis//triste.svg" alt="triste" id="emoji-triste" />
+        </button>
+        <button class="btn-emoji" value="bravo">
+          <img src="img/emojis/bravo.svg" alt="bravo" id="emoji-bravo" />
+        </button>
+        <button class="btn-emoji" value="sonolento">
+          <img
+            src="img/emojis/sonolento.svg"
+            alt="sonolento"
+            id="emoji-sonolento"
+          />
+        </button>
+        <button class="btn-emoji" value="medo">
+          <img src="img/emojis/medo.svg" alt="medo" id="emoji-medo" />
+        </button>
+      </div>
+      <div class="buttons">
+        <button class="btn-confirmar">Confirmar</button>
+      </div>
+    </section>
+    <footer>
+      <h3>InterHAD</h3>
+      <h3>Projeto Socioenativo</h3>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="public/script.js"></script>
+  </body>
+</html>

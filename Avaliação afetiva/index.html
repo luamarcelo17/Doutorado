@@ -7,39 +7,79 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Avaliação Afetivat</title>
+    <title>Avaliação Afetiva</title>
   </head>
   <body>
-    <header>Como você está se sentindo?</header>
-    <section class="main">
-      <div class="emojis">
-        <button class="btn-emoji" value="feliz">
-          <img src="img/feliz.svg" alt="feliz" id="emoji-feliz" />
-        </button>
-        <button class="btn-emoji" value="calmo">
-          <img src="img/calmo.svg" alt="calmo" id="emoji-calmo" />
-        </button>
-        <button class="btn-emoji" value="triste">
-          <img src="img/triste.svg" alt="triste" id="emoji-triste" />
-        </button>
-        <button class="btn-emoji" value="bravo">
-          <img src="img/bravo.svg" alt="bravo" id="emoji-bravo" />
-        </button>
-        <button class="btn-emoji" value="sonolento">
-          <img src="img/sonolento.svg" alt="sonolento" id="emoji-sonolento" />
-        </button>
-        <button class="btn-emoji" value="medo">
-          <img src="img/medo.svg" alt="medo" id="emoji-medo" />
-        </button>
+    <section class="cadastrar-sessao" id="cadatrar-avaliacao">
+      <div class="titulo">
+        <h1>Avaliação Afetiva</h1>
       </div>
-      <div class="buttons">
-        <button class="btn-confirmar">Confirmar</button>
+      <div class="formulario">
+        <form>
+          <div class="input">
+            <label>Nome da Oficina: </label>
+            <input type="text" id="nome-oficina" />
+          </div>
+          <div class="input">
+            <label>Local da Oficina: </label>
+            <input type="text" id="local-oficina" />
+          </div>
+        </form>
+        <div class="cadastrar">
+          <button id="btn-cadastrar-avaliacao">Cadastrar Avaliação</button>
+        </div>
+      </div>
+      <div class="logos">
+        <img src="img/logos/interhad.png" alt="interHAD" id="interhad" />
+        <img src="img/logos/unicamp.png" alt="socioenativo" id="socioenativo" />
+        <img src="img/logos/unicamp.png" alt="unicamp" id="unicamp" />
+        <img src="img/logos/ic-unicamp.png" alt=" ic-unicamp" id="ic-unicamp" />
+      </div>
+    </section>
+    <section class="avaliacao" id="avaliacao">
+      <header>Como <span>você</span> está se sentindo?</header>
+      <section class="main">
+        <div class="emojis">
+          <button class="btn-emoji" value="feliz">
+            <img src="img/emojis/feliz.svg" alt="feliz" id="emoji-feliz" />
+          </button>
+          <button class="btn-emoji" value="calmo">
+            <img src="img/emojis/calmo.svg" alt="calmo" id="emoji-calmo" />
+          </button>
+          <button class="btn-emoji" value="triste">
+            <img src="img/emojis/triste.svg" alt="triste" id="emoji-triste" />
+          </button>
+          <button class="btn-emoji" value="bravo">
+            <img src="img/emojis/bravo.svg" alt="bravo" id="emoji-bravo" />
+          </button>
+          <button class="btn-emoji" value="sonolento">
+            <img
+              src="img/emojis/sonolento.svg"
+              alt="sonolento"
+              id="emoji-sonolento"
+            />
+          </button>
+          <button class="btn-emoji" value="medo">
+            <img src="img/emojis/medo.svg" alt="medo" id="emoji-medo" />
+          </button>
+        </div>
+        <div class="buttons">
+          <button class="btn-confirmar">Confirmar</button>
+        </div>
+      </section>
+    </section>
+    <section class="agradecimento" id="agradecimento">
+      <h1>Obrigado!</h1>
+      <div class="opcoes">
+        <button class="btn-opcoes">Nova Avaliação</button>
+        <button class="btn-opcoes">Encerrar Avaliação</button>
       </div>
     </section>
     <footer>
       <h3>InterHAD</h3>
       <h3>Projeto Socioenativo</h3>
     </footer>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
