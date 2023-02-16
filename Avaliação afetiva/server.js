@@ -25,7 +25,15 @@ io.on("connection", (socket) => {
   socket.on("registrarLog", (dado) => {
     escreverLog(path, "\n" + dado);
   });
+
+  socket.on('teste', (dado) => {
+    console.log(dado)
+  });
+
+
 });
+
+
 
 http.listen(3000, function () {
   console.log("Hello word: 3000");

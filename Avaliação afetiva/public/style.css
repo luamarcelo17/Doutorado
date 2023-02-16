@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 * {
   margin: 0;
@@ -14,6 +15,7 @@ body {
   flex-direction: column;
   height: 100%;
   font-family: "Nunito", sans-serif;
+  /* overflow: hidden; */
 }
 
 section {
@@ -102,7 +104,7 @@ section {
 }
 
 .cadastrar button:hover {
-  background: whitesmoke;
+  background: rgb(219, 218, 218);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -135,6 +137,142 @@ section {
   width: 120px;
 }
 
+.avaliacao-data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+
+.gender {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  height: 50vh;
+  border-radius: 15px;
+  background:rgb(241, 240, 240);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.gender h3 {
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  height: 20px;
+}
+
+.gender-img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40vw;
+  height: 50vh;
+  margin-top: 20px;
+}
+
+.gender-img img {
+  width: 80px;
+}
+
+.gender img:hover{
+  width: 180px; 
+}
+
+.gender-img img.emoji-selecionado {
+  width: 180px;
+}
+
+
+.age {
+  border-radius: 15px;
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+  background:rgb(241, 240, 240);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.age h3 {
+  margin-top: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  height: 20px;
+}
+
+.data-age {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 40vw;
+  height: 50vh;
+  margin-top: 20px;
+
+}
+
+.data-age input {
+  font-size: 30px;
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+}
+.data-age input:focus {
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  outline: none;
+}
+
+.btn-confirmar-data {
+  margin-bottom: 80px;
+  font-size: 50px;
+  border-radius: 25px;
+  background: white;
+  padding: 10px;
+  width: 400px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: none;
+  transition: all 0.5s ease;
+}
+
+.btn-confirmar-data:hover {
+  background: rgb(219, 218, 218);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+  
+.btn-confirmar-data:disabled {
+  cursor: not-allowed;
+  background: white;
+  box-shadow: none;
+  color: white;
+}
+
+.btn-confirmar-data:hover:disabled {
+  cursor: default;
+  background: white;
+  box-shadow: none;
+}
+
+
 .avaliacao {
   display: flex;
   justify-content: space-around;
@@ -145,10 +283,14 @@ section {
 
 header {
   text-align: center;
-  font-size: 5em;
+  font-size: 3.5em;
   font-weight: 600;
-  padding-top: 25px;
+  padding-top: 15px;
   margin-bottom: 50px;
+  background-color: rgb(226, 226, 226);
+  border-bottom: 10px solid black;
+  box-shadow: 0 5px 5px #00000090;
+  border-image: linear-gradient(to right, #05c1ff, #ffff00, red) 1;
 }
 
 header span {
@@ -161,15 +303,16 @@ header span {
   justify-content: space-around;
   align-content: center;
   height: 220px;
+  background: rgb(241, 240, 240);
+
 }
 
 .emojis img {
   width: 80px;
-  cursor: pointer;
 }
 
+
 .emojis img:hover {
-  box-shadow: 0px 10px 20px #000000;
   width: 200px;
   border-radius: 50%;
   background: transparent;
@@ -195,16 +338,17 @@ header span {
   padding: 10px;
   width: 400px;
   cursor: pointer;
-  box-shadow: 2px 10px 20px #000000;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border: none;
   transition: all 0.5s ease;
 }
 
-/* .btn-confirmar:hover {
-  background: red;
-} */
+.btn-confirmar:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
 
-.btn-confirmar:disabled {
+
+/* .btn-confirmar:disabled {
   cursor: not-allowed;
   background: white;
   box-shadow: none;
@@ -215,21 +359,74 @@ header span {
   cursor: default;
   background: white;
   box-shadow: none;
+} */
+
+.btn-confirmar:disabled {
+  box-shadow: none;
+  background: rgb(241, 240, 240);
+  cursor: default;
+}
+.btn-confirmar:disabled:hover {
+  box-shadow: none;
 }
 
 .btn-emoji {
-  background: #fff;
+  background: rgb(241, 240, 240);
   border: none;
+  height: 220px;
 }
 
 footer {
   font-size: 10px;
   text-align: center;
-  background: gray;
-  margin-top: 50px;
+  background-color: rgb(226, 226, 226);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 7vh;
+  height: 5vh;
+}
+
+.copyright h3 {
+  padding-top: 10px;
+  color: rgb(70, 69, 69);
+}
+
+.copyright h3 span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.agradecimento {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.opcoes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  height: 20vh;
+}
+
+.btn-opcoes {
+  width: 270px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: rgb(241, 240, 240);
+  transition: all 0.5s ease;
+  margin-bottom: 15px;
+}
+
+.btn-opcoes:hover {
+  background: rgb(219, 218, 218);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

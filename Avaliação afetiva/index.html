@@ -10,7 +10,7 @@
     <title>Avaliação Afetiva</title>
   </head>
   <body>
-    <section class="cadastrar-sessao" id="cadatrar-avaliacao">
+    <section class="cadastrar-sessao" id="cadastrar-avaliacao">
       <div class="titulo">
         <h1>Avaliação Afetiva</h1>
       </div>
@@ -26,7 +26,9 @@
           </div>
         </form>
         <div class="cadastrar">
-          <button id="btn-cadastrar-avaliacao">Cadastrar Avaliação</button>
+         <a href="#avaliacao-data"><button id="btn-cadastrar-avaliacao">Cadastrar Avaliação</button></a>
+         <!-- <button id="btn-cadastrar-avaliacao">Cadastrar Avaliação</button> -->
+
         </div>
       </div>
       <div class="logos">
@@ -36,8 +38,69 @@
         <img src="img/logos/ic-unicamp.png" alt=" ic-unicamp" id="ic-unicamp" />
       </div>
     </section>
-    <section class="avaliacao" id="avaliacao">
-      <header>Como <span>você</span> está se sentindo?</header>
+    <!-- ------------------------------------------------------------------------------------------------ -->
+    <section class="avaliacao-data titulo" id="avaliacao-data">
+      <h1>Sobre mim...</h1>
+      <div class="data">
+        <div class="gender">
+          <h3>Eu sou...</h3>
+          <div class="gender-img">
+            <img src="img/emojis/menino.jpg" alt="masc" id="masc" class="">
+            <img src="img/emojis/menina.png" alt="fem" id="fem" class="">
+          </div>
+        </div>
+        <div class="age">
+          <h3>Idade</h3>
+          <div class="data-age">
+            <label>Eu tenho</label>
+            <input type="text" id="idade">
+            <label> anos </label>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <a href="#avaliacao1"> <button class="btn-confirmar-data">Confirmar</button> </a>
+      </div>
+    </section>
+    <!-- ------------------------------------------------------------------------------------------------ -->
+
+    <section class="avaliacao" id="avaliacao1">
+      <header id="pergunta">Como <span>você</span> está se sentindo?</header>
+      <section class="main">
+        <div class="emojis">
+          <button class="btn-emoji" value="feliz">
+            <img src="img/emojis/feliz.svg" alt="feliz" id="emoji-feliz" />
+          </button>
+          <button class="btn-emoji" value="calmo">
+            <img src="img/emojis/calmo.svg" alt="calmo" id="emoji-calmo" />
+          </button>
+          <button class="btn-emoji" value="triste">
+            <img src="img/emojis/triste.svg" alt="triste" id="emoji-triste" />
+          </button>
+          <button class="btn-emoji" value="bravo">
+            <img src="img/emojis/bravo.svg" alt="bravo" id="emoji-bravo" />
+          </button>
+          <button class="btn-emoji" value="sonolento">
+            <img
+              src="img/emojis/sonolento.svg"
+              alt="sonolento"
+              id="emoji-sonolento"
+            />
+          </button>
+          <button class="btn-emoji" value="medo">
+            <img src="img/emojis/medo.svg" alt="medo" id="emoji-medo" />
+          </button>
+        </div>
+        <div class="buttons">
+          <a href="#avaliacao1" id="link-btn-confirmar"><button class="btn-confirmar">Confirmar</button></a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- <section class="avaliacao" id="avaliacao2">
+      <header>Como você acha que o <span>Instint</span> estava se sentindo?</header>
       <section class="main">
         <div class="emojis">
           <button class="btn-emoji" value="feliz">
@@ -67,17 +130,20 @@
           <button class="btn-confirmar">Confirmar</button>
         </div>
       </section>
-    </section>
-    <section class="agradecimento" id="agradecimento">
+    </section> -->
+
+    <!-- ------------------------------------------------------------------------- -->
+    <section class="agradecimento titulo" id="agradecimento">
       <h1>Obrigado!</h1>
       <div class="opcoes">
-        <button class="btn-opcoes">Nova Avaliação</button>
-        <button class="btn-opcoes">Encerrar Avaliação</button>
+        <a href="#avaliacao-data"><button class="btn-opcoes" id="nova-avaliacao">Nova Avaliação</button></a>
+        <a href="#cadastrar-avaliacao"><button class="btn-opcoes" id="encerrar-avaliacao">Encerrar Avaliação</button></a>
       </div>
     </section>
     <footer>
-      <h3>InterHAD</h3>
-      <h3>Projeto Socioenativo</h3>
+      <div class="copyright">
+        <h3><span>©</span> Luã Marcelo Muriana  |  InterHAD  | Projeto Socioenativo</h3>
+      </div>
     </footer>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
