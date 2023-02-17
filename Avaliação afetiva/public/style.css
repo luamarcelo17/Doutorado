@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 * {
   margin: 0;
@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   height: 100%;
   font-family: "Nunito", sans-serif;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 section {
@@ -133,6 +133,10 @@ section {
   width: 150px;
 }
 
+.logos img#socioenativo {
+  width: 80px;
+}
+
 .logos img#ic-unicamp {
   width: 120px;
 }
@@ -159,15 +163,15 @@ section {
   width: 40vw;
   height: 50vh;
   border-radius: 15px;
-  background:rgb(241, 240, 240);
+  background: rgb(241, 240, 240);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .gender h3 {
   margin-top: 10px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 50px;
   height: 20px;
 }
@@ -185,14 +189,13 @@ section {
   width: 80px;
 }
 
-.gender img:hover{
-  width: 180px; 
+.gender img:hover {
+  width: 180px;
 }
 
 .gender-img img.emoji-selecionado {
   width: 180px;
 }
-
 
 .age {
   border-radius: 15px;
@@ -204,15 +207,15 @@ section {
   align-items: center;
   flex-direction: column;
   font-size: 30px;
-  background:rgb(241, 240, 240);
+  background: rgb(241, 240, 240);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .age h3 {
   margin-top: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 50px;
   height: 20px;
 }
@@ -225,7 +228,6 @@ section {
   width: 40vw;
   height: 50vh;
   margin-top: 20px;
-
 }
 
 .data-age input {
@@ -237,7 +239,7 @@ section {
   border-radius: 10px;
 }
 .data-age input:focus {
-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   outline: none;
 }
 
@@ -258,7 +260,7 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background: rgb(219, 218, 218);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-  
+
 .btn-confirmar-data:disabled {
   cursor: not-allowed;
   background: white;
@@ -271,7 +273,6 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background: white;
   box-shadow: none;
 }
-
 
 .avaliacao {
   display: flex;
@@ -304,13 +305,11 @@ header span {
   align-content: center;
   height: 220px;
   background: rgb(241, 240, 240);
-
 }
 
 .emojis img {
   width: 80px;
 }
-
 
 .emojis img:hover {
   width: 200px;
@@ -346,7 +345,6 @@ header span {
 .btn-confirmar:hover {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 
 /* .btn-confirmar:disabled {
   cursor: not-allowed;

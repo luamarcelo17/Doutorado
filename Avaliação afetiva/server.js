@@ -16,8 +16,8 @@ io.on("connection", (socket) => {
   //apenas para mostrar se ouve uma nova conexão
   console.log("new connection", socket.id); // mostra o id da conexão
 
-  socket.on("criarLog", (dado) => {
-    nome_arquivo = `/Logs/${dado}.txt`;
+  socket.on("criarLog", (nomeOficina, dado) => {
+    nome_arquivo = `/Logs/${nomeOficina}.csv`;
     path = __dirname + `${nome_arquivo}`;
     escreverLog(path, dado);
   });
@@ -26,14 +26,10 @@ io.on("connection", (socket) => {
     escreverLog(path, "\n" + dado);
   });
 
-  socket.on('teste', (dado) => {
-    console.log(dado)
+  socket.on("teste", (dado) => {
+    console.log(dado);
   });
-
-
 });
-
-
 
 http.listen(3000, function () {
   console.log("Hello word: 3000");

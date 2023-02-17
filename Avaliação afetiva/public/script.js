@@ -15,27 +15,31 @@ socket.on("connect", function () {
 const emojiClicked = document.querySelector(".emojis");
 const eAfetivo = document.querySelectorAll(".btn-emoji");
 const btnConfirmar = document.querySelector(".btn-confirmar");
-const btnCadastrarAvaliacao = document.getElementById("btn-cadastrar-avaliacao");
-const pergunta = document.getElementById("pergunta")
-const aBtnConfirmar = document.getElementById("link-btn-confirmar")
-const novaAvalicao = document.getElementById("nova-avaliacao")
-const encerraAvaliacao = document.getElementById("encerrar-avaliacao")
-const eGenderMasc = document.getElementById("masc")
-const eGenderFem = document.getElementById("fem")
+const btnCadastrarAvaliacao = document.getElementById(
+  "btn-cadastrar-avaliacao"
+);
+const btnConfirmarData = document.querySelector(".btn-confirmar-data");
+const pergunta = document.getElementById("pergunta");
+const aBtnConfirmar = document.getElementById("link-btn-confirmar");
+const novaAvalicao = document.getElementById("nova-avaliacao");
+const encerraAvaliacao = document.getElementById("encerrar-avaliacao");
+const eGenderMasc = document.getElementById("masc");
+const eGenderFem = document.getElementById("fem");
 
 //console.log(btnCadastrarAvaliacao)
 //const btnConfirmarData = document.getElementById("btn-confirmar-data")
-
 
 let cor;
 let eClicked;
 let genderClicked;
 let nomeOficina;
 let localOficina;
-let qtdeResposta=0
+let qtdeResposta = 0;
 let userAge;
-
 let logData;
+
+let date = new Date();
+let data;
 
 btnConfirmar.disabled = true;
 
@@ -65,84 +69,92 @@ const estadoAfetivo = (event) => {
   });
   btnConfirmar.disabled = false;
   if (cor === "black") {
-    btnConfirmar.style.color = "white"
+    btnConfirmar.style.color = "white";
   } else {
-    btnConfirmar.style.color = "black"
+    btnConfirmar.style.color = "black";
   }
-  btnConfirmar.style.background = cor
+  btnConfirmar.style.background = cor;
 };
 
 const cadastrarAvaliacao = (event) => {
   nomeOficina = document.getElementById("nome-oficina").value;
   localOficina = document.getElementById("local-oficina").value;
-  socket.emit("criarLog", `${nomeOficina} - ${localOficina}`);
+  logData = `${nomeOficina};${localOficina};`;
+  socket.emit(
+    "criarLog",
+    nomeOficina,
+    "nomeOficina;localOficina;dataOficina;horaOficina;genParticipante;idadeParticipante;pergunta1;pergunta2"
+  );
   btnCadastrarAvaliacao.disabled = true;
 };
 
 const confirmarEA = () => {
   if (qtdeResposta === 1) {
-    qtdeResposta = 0
-    aBtnConfirmar.href = "#agradecimento"
+    qtdeResposta = 0;
+    socket.emit("registrarLog", logData);
+    aBtnConfirmar.href = "#agradecimento";
   } else {
-    btnConfirmar.style.color = "gray"
-    btnConfirmar.style.background = "rgb(241, 240, 240)"
+    btnConfirmar.style.color = "gray";
+    btnConfirmar.style.background = "rgb(241, 240, 240)";
     btnConfirmar.disabled = true;
-    pergunta.innerText= 'Como você acha que o Instint estava se sentindo?'
+    pergunta.innerText = "Como você acha que o Instint estava se sentindo?";
     qtdeResposta++;
     document
-    .getElementById("emoji-" + eClicked)
-    .classList.remove("emoji-selecionado");
-   
+      .getElementById("emoji-" + eClicked)
+      .classList.remove("emoji-selecionado");
   }
-}
-
-const registrarEstadoAfetivo = () => {
-  socket.emit("registrarLog", eClicked);
 };
 
+const registrarEstadoAfetivo = () => {
+  //socket.emit("registrarLog", eClicked);
+  logData = logData + eClicked + ";";
+};
 
 const iniciarNovaAvaliacao = () => {
   qtdeResposta = 0;
-  btnConfirmar.disabled = true
-  aBtnConfirmar.href = "#avaliacao1"
-  btnConfirmar.style.color = "gray"
-  btnConfirmar.style.background = "rgb(241, 240, 240)"
-  pergunta.innerText= 'Como você está se sentindo?'
+  btnConfirmar.disabled = true;
+  aBtnConfirmar.href = "#avaliacao1";
+  btnConfirmar.style.color = "gray";
+  btnConfirmar.style.background = "rgb(241, 240, 240)";
+  pergunta.innerText = "Como você está se sentindo?";
   document
-  .getElementById("emoji-" + eClicked)
-  .classList.remove("emoji-selecionado");
-}
+    .getElementById("emoji-" + eClicked)
+    .classList.remove("emoji-selecionado");
+  document.getElementById("masc").classList.remove("emoji-selecionado");
+  document.getElementById("fem").classList.remove("emoji-selecionado");
+  document.getElementById("idade").value = "";
+  logData = `${nomeOficina};${localOficina};`;
+};
 
 const emojiGenderMascSelecionado = () => {
   document.getElementById("masc").classList.add("emoji-selecionado");
   document.getElementById("fem").classList.remove("emoji-selecionado");
-  genderClicked = "masc"
-}
+  genderClicked = "masc";
+};
 
 const emojiGenderFemSelecionado = () => {
   document.getElementById("fem").classList.add("emoji-selecionado");
   document.getElementById("masc").classList.remove("emoji-selecionado");
-  genderClicked = "fem"
-}
+  genderClicked = "fem";
+};
 
 const confirmarDadosUsuario = () => {
-  alert()
-//   logData = `${genderClicked};${userAge.document.getElementById("idade").value};`
-//   //console.log(logData)
-  
-//   socket.emit('teste', logData)
-// }
-}
-
+  userAge = document.getElementById("idade").value;
+  data = `${date.getDate()}/${
+    date.getMonth() + 1
+  }/${date.getFullYear()};${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  logData = logData + `${data};${genderClicked};${userAge};`;
+  //alert(logData);
+  //socket.emit("registrarLog", logData);
+};
 
 const encerrarAvaliacao = () => {
-    iniciarNovaAvaliacao();
-    btnCadastrarAvaliacao.disabled = false;
-    document.getElementById("nome-oficina").value = ""
-    document.getElementById("local-oficina").value= ""
-
-    
-}
+  iniciarNovaAvaliacao();
+  btnCadastrarAvaliacao.disabled = false;
+  document.getElementById("nome-oficina").value = "";
+  document.getElementById("local-oficina").value = "";
+  logData = "";
+};
 
 //------------------------
 
@@ -151,17 +163,16 @@ eGenderMasc.addEventListener("click", emojiGenderMascSelecionado);
 eGenderFem.addEventListener("click", emojiGenderFemSelecionado);
 
 btnConfirmar.addEventListener("click", registrarEstadoAfetivo);
-btnConfirmar.addEventListener("click", confirmarEA)
-//btnConfirmarData.addEventListener("click", confirmarDadosUsuario)
+btnConfirmar.addEventListener("click", confirmarEA);
+btnConfirmarData.addEventListener("click", confirmarDadosUsuario);
 //btnConfirmar.addEventListener("mouseover", alterarHover);
 //btnConfirmar.addEventListener("mouseout", voltarPadrao);
 btnCadastrarAvaliacao.addEventListener("click", cadastrarAvaliacao);
 
 //btnConfirmarEA.addEventListener("click", confirmarEA)
 
-novaAvalicao.addEventListener("click", iniciarNovaAvaliacao)
-encerraAvaliacao.addEventListener("click", encerrarAvaliacao)
-
+novaAvalicao.addEventListener("click", iniciarNovaAvaliacao);
+encerraAvaliacao.addEventListener("click", encerrarAvaliacao);
 
 //---------------------------------- Não usado
 
